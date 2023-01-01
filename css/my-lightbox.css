@@ -1,0 +1,135 @@
+/**
+ * Plugin criado por:
+ * Paulo Cezario
+ * https://github.com/phscezario
+ **/
+
+/*  Loader   */ 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes fadeIn{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.loader {
+    height: 250px;
+}
+.loader div{
+    border: 16px solid #fff; 
+    border-top: 16px solid transparent; 
+    border-bottom: 16px solid transparent;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite; 
+    margin: auto;
+    margin-top: 100%;
+ }
+.fade {
+    opacity: 0;
+}
+#lb-close, #lb-left-arrow, #lb-right-arrow, #lb-shadowbox  {
+    cursor: pointer;
+}
+#lb-shadowbox, #lb-close, #lb-window, #lb-gallery, #lb-img, #lb-left-arrow, #lb-right-arrow {
+    position: fixed;
+}
+.loader, #lb-img{
+    left: 50%;
+    top: 50%;
+    position: absolute;
+}
+/* Shadowbox */
+#lb-shadowbox {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+}
+/* Botão de Fechar */
+#lb-close{
+    color: #FFF;
+    top: 5px;
+    right: 5px;
+    width:60px;
+}
+#lb-left-arrow{
+    left: 50%;
+}
+#lb-right-arrow{
+    right: 50%;
+}
+#lb-left-arrow, #lb-right-arrow{
+    top: 40%;
+    width: 64px;
+    height: 64px;
+    line-height: 52px !important;
+    background: #FFF;
+    color: #000;
+}
+#lb-left-arrow, #lb-right-arrow, #lb-close{
+    font: normal 52pt sans-serif;
+    text-align:center;
+    transition: 0.2s;
+    z-index:1000000010;
+}
+#lb-close:hover, #lb-left-arrow:hover, #lb-right-arrow:hover, #lb-gallery a:hover{
+    -moz-opacity: 0.7;
+    opacity:.70;
+    filter: alpha(opacity=70);
+}
+#lb-window {
+    z-index:1000000005;
+    text-align: center;
+    width: 100%;
+    height: 80%;
+    left: 0;
+    top: 0;
+    animation: fadeIn .5s;
+}
+#lb-img{
+    width: max-content;
+}
+#lb-img img{
+    max-height: 100%;
+    max-width: 100%;
+    border: 5px solid #fff;
+}
+#lb-gallery {
+    width: 100%;
+    height: 20%;
+    left: 0;
+    bottom: 0;
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#lb-img, #lb-gallery, #lb-img img {
+    transition: .2s;  
+} 
+.lb-thumbnails {
+    box-sizing: border-box;
+    display: inline-block;
+}
+.lb-thumbnails img{
+    border: 2px solid transparent;
+    display: inline-block;
+}
+.lb-thumbnails:focus img{
+    border: 2px solid #FFF;
+}
+.lb-slider, .lb-slider a {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+}
+[data-play="yes"] {
+    transition: .15s;  
+} 
+@media only screen and (max-width: 600px) {
+    #lb-left-arrow, #lb-right-arrow {
+        display: none;
+    }
+}

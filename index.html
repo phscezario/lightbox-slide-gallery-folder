@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lightbox com Galeria de imagens</title>
+
+    <link href="css/my-lightbox.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        /* Não obrigatorio */
+        div.container a img{
+            width: 150px;
+            height: 150px;
+            padding: 10px;
+        }
+        div.container a{
+            text-decoration: none;
+        }
+        div.container h3{
+            margin-bottom: 0; 
+        } 
+    </style>
+
+</head>
+<body>
+    <!-- Para Imagens unicas -->
+    <div class="container">
+        <h3>Imagem simples</h3>
+        <a href="images/img1.jpg" title="Titulo: Imagem 1" rel="mylightbox">
+            <img src="images/img1.jpg" alt="Descrição: Imagem 1">
+        </a>
+    </div>
+
+    <!-- Para Galerias de imagens -->
+    <div class="container">
+        <h3>Galeria com imagens na pagina</h3>
+        <a href="images/img2.jpg" title="Titulo: Imagem 2" rel="mylightbox[galeria1]">
+            <img src="images/img2.jpg" alt="Descrição: Imagem 2">
+        </a>
+
+        <a href="images/img3.jpg" title="Titulo: Imagem 3" rel="mylightbox[galeria1]">
+            <img src="images/img3.jpg" alt="Descrição: Imagem 3">
+        </a>
+
+        <a href="images/img4.jpg" title="Titulo: Imagem 4" rel="mylightbox[galeria1]">
+            <img src="images/img4.jpg" alt="Descrição: Imagem 4">
+        </a>
+
+        <a href="images/img5.jpg" title="Titulo: Imagem 5" rel="mylightbox[galeria1]">
+            <img src="images/img5.jpg" alt="Descrição: Imagem 5">
+        </a>
+    </div>
+
+    <!-- Para Galerias ocultas -->
+    <div class="container">
+        <h3>Galeria com imagens em diretório</h3>
+        <a href="images/galeria-1/1.png" title="Titulo: Galeria Oculta" rel="mylightbox[folder]" data-directory="images/galeria-1" data-type="png" data-length="10">
+            <img src="images/galeria-1/1.png" alt="Descrição: Galeria Oculta">
+        </a>
+
+        <a href="images/galeria-2/1.jpg" title="Titulo: Galeria Oculta" rel="mylightbox[folder]" data-directory="images/galeria-2" data-type="jpg" data-length="20" data-play="yes" data-playseconds="3">
+            <img src="images/galeria-2/1.jpg" alt="Descrição: Galeria Oculta">
+        </a>
+
+    </div>
+
+    <script src="js/my-lightbox.js" type="text/javascript"></script>
+</body>
+</html>
